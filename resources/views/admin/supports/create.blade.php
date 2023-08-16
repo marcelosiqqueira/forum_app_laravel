@@ -6,10 +6,8 @@
     @endforeach()
 @endif
 
-<form action="{{ route('supports.update', $support->id) }}" method="POST">
+<form action="{{ route('supports.store', $support->id) }}" method="POST">
     {{-- <input type="text" value="{{ csrf_token() }}" name="_token"> --}}
-    @csrf()
-    @method('PUT')
     <input type="text" placeholder="Assunto" name="subject" value="{{ old('subject') }}">
     <textarea name="body" cols="30" rows="5" placeholder="Descrição">
         {{ old('body') }}
