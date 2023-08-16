@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::delete('/supports/{id}', [SupportController::class, 'destroy'])->name('supports.destroy');
 Route::get('/supports/{id}/edit', [SupportController::class, 'edit'])->name('supports.edit');
 Route::get('/supports/create', [SupportController::class, 'create'])->name('supports.create');
 Route::get('/supports/{id}', [SupportController::class, 'show'])->name('supports.show');

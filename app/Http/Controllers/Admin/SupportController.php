@@ -40,4 +40,12 @@ class SupportController extends Controller
         }
         return view('admin/supports.edit', compact('support'));
     }
+
+    public function destroy(string|int $id){
+        if(!$support = Support::find($id) ){
+            return back();
+        }
+        $support->delete();
+        return redirect()->route('supports.index');
+    }
 }
