@@ -10,10 +10,8 @@ use stdClass;
 class SupportService{
 
     public function __construct(
-        protected SupportRepositoryInterface $repository
-    )
-    {
-
+        protected SupportRepositoryInterface $repository,
+    ) {
     }
 
     public function getAll(string $filter = null): array{

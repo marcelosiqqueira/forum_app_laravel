@@ -18,7 +18,6 @@ class SupportController extends Controller
 
     public function index(Request $request){
         $supports = $this->service->getAll($request->filter);
-        dd($supports);
         return view('admin/supports/index', compact('supports'));
     }
 
@@ -36,7 +35,7 @@ class SupportController extends Controller
         return view('admin/supports/create');
     }
 
-    public function store(Request $request, Support $support){
+    public function store(StoreUpdateSupport $request){
         $this->service->new(
             CreateSupportDTO::makeFromRequest($request)
         );
