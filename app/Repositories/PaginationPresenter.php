@@ -27,7 +27,7 @@ class PaginationPresenter implements PaginationInterface
         return $this->paginator->total() ?? 0;
     }
     public function isFirstPage(): bool {
-        return $this->paginator->orFirstPage();
+        return $this->paginator->onFirstPage();
     }
     public function isLastPage(): bool {
         return $this->paginator->currentPage() === $this->paginator->lastPage();
@@ -38,7 +38,7 @@ class PaginationPresenter implements PaginationInterface
     public function getNumberNextPage(): int {
         return $this->paginator->currentPage() + 1;
     }
-    public function getNumberPrePage(): int {
+    public function getNumberPreviousPage(): int {
         return $this->paginator->currentPage() - 1;
     }
 
