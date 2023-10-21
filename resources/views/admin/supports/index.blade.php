@@ -8,7 +8,7 @@
         <th>descrição</th>
     </thead>
     <tbody>
-        @foreach($supports as $support)
+        @foreach($supports->items() as $support)
             <tr>
                 <td>{{ $support['subject'] }}</td>
                 <td>{{ $support['status'] }}</td>
